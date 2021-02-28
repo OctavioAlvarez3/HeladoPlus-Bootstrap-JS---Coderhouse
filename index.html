@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helado Plus</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="iconos/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+            <div class="barra container-fluid">
+                <div class="row menu ">
+                    <div class="container d-flex ">
+                        <div class="col-md-6 columna-menu-1 ">
+                            <a href=""><img src="img/logo-heladeria.png" class="logo-heladeria" alt=""></a>
+                        </div>
+                        <div class="col-md-6 columna-menu-2">
+                            <nav class="nav d-flex navegacion-principal justify-content-end">
+                                <ul>
+                                  <li class="submenu">
+                                         <a href="#" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                                          <div id="carrito">
+                                                  
+                                                  <table id="lista-carrito" class="table">
+                                                      <thead>
+                                                          <tr>
+                                                              <th>Imagen</th>
+                                                              <th>Nombre</th>
+                                                              <th>Precio</th>
+                                                              <th>Cantidad</th>
+                                                              <th></th> <!--para eliminar cursos-->
+                                                          </tr>
+                                                      </thead>
+                                                      <!--Acá se va llenando el carrito-->
+                                                      <tbody></tbody>
+                                                  </table>                                                 
+                                                  <a href="#" id="confirmar-compra" class="confirmar">Confirmar compra</a>
+                                                  <a href="#" id="vaciar-carrito" class="vaciar">Vaciar Carrito</a>
+                                          </div>
+                                  </li>
+                              </ul>
+                            </nav>
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <div class="container  div-cotizacion d-flex flex-column">
+                    <span>Los mejores insumos </span>
+                    <span>para tu heladería</span>
+                    <a href="#cotizador"><button class="b-cotizacion">Comprar</button></a>
+                </div>
+            </div>
+        </div>
+    
+    <!--Modal-->
+    <div class="modal-contenedor">
+      <div class="modal-carrito">
+          <h3 class="text-center mb-3 ">Confirmar envio</h3>
+          <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+          <div id="carrito-contenedor">
+              <form action="" class="form" id="frmDatos">
+                
+                    <label for="">Nombre</label>
+                    <input type="text" name="nombre"  autocomplete="off" id="nombre">
+                  
+                    <label for="">Localidad</label>
+                    <input type="text" name="localidad"  autocomplete="off" id="localidad">
+                  
+                    <label for="">Calle y altura</label>
+                   <input type="text" name="calle"  autocomplete="off" id="calle">
+                 
+                  
+                    <label for="">Forma de pago</label>
+                    <select name="select" class="mb-5 pago">
+                      <option value="value1">Efectivo</option>
+                      <option value="value2">Tarjeta</option>
+                      <option value="value3">Mercadopago</option>
+                    </select>
+                  
+                  <button class="btn-pedido">Enviar pedido</button>
+                  
+              </form>
+          </div>
+          
+      </div>
+    </div>
+    
+    </header>
+
+    
+
+
+    <!--seccion principal-->
+    <main class="">
+        <div class="fondo-cards " id="cotizador">
+          <p class=p-agregar">¡Agregá los insumos al carrito!</p>
+
+          <!--cards insumos-->
+          <section class="container card-insumos  mt-5 lista-cursos"  >
+              
+              <!--Primera fila del card-->
+              <div class="row primera-fila ">
+                  <div class="col-md-4 ">
+                      <div class="card" style="width: 18rem;">
+                          <img class="card-img-top" src="img/cono-helado.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Cono de pasta</h5>
+                            <div class="d-flex justify-content-between precios">
+                              <span>$50</span>
+                              <span>$10</span>
+                            </div>
+                            <a href="#" class="boton-cards btn agregar-carrito mt-4" data-id="1">Agregar al carrito</a>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="card" style="width: 18rem;">
+                          <img class="card-img-top" src="img/taza-telgopor.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Taza de telgopor</h5>
+                            <div class="d-flex justify-content-between precios">
+                              <span>$80</span>
+                              <span>$40</span>
+                            </div>
+                            <a href="#" class="boton-cards btn agregar-carrito mt-4" data-id="2">Agregar al carrito</a>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="card" style="width: 18rem;">
+                          <img class="card-img-top" src="img/cuchara.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Cuchara servidora</h5>
+                            <div class="d-flex justify-content-between precios">
+                              <span>$200</span>
+                              <span>$100</span>
+                            </div>
+                            <a href="#" class="boton-cards btn agregar-carrito mt-4" data-id="3">Agregar al carrito</a>
+                          </div>
+                        </div>
+                  </div>
+              </div>
+
+              <!--Segunda fila del card-->
+              <div class="row mt-5 segunda-fila  ">
+                  <div class="col-md-4">
+                      <div class="card" style="width: 18rem;">
+                          <img class="card-img-top" src="img/cucharita.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Cucharitas</h5>
+                            <div class="d-flex justify-content-between precios">
+                              <span>$10</span>
+                              <span>$50</span>
+                            </div>
+                            <a href="#" class="boton-cards btn agregar-carrito mt-4" data-id="4">Agregar al carrito</a>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="card" style="width: 18rem;">
+                          <img class="card-img-top" src="img/servilletas.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Servilletas</h5>
+                            <div class="d-flex justify-content-between precios">
+                              <span>$100</span>
+                              <span>$50</span>
+                            </div>
+                            <a href="#" class="boton-cards btn agregar-carrito mt-4" data-id="5">Agregar al carrito</a>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="card" style="width: 18rem;">
+                          <img class="card-img-top" src="img/salsa.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Salsa de chocolate</h5>
+                            <div class="d-flex justify-content-between precios">
+                              <span>$80</span>
+                              <span>$30</span>
+                            </div>
+                            <a href="#" class="boton-cards btn agregar-carrito mt-4" data-id="6">Agregar al carrito</a>
+                          </div>
+                        </div>
+                  </div>
+              </div>
+
+              <!--Tercera fila del card-->
+              <div class="row mt-5 tercera-fila ">
+                  <div class="col-md-4">
+                      <div class="card" style="width: 18rem;">
+                          <img class="card-img-top" src="img/taza.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Taza de pasta</h5>
+                            <div class="d-flex justify-content-between precios">
+                              <span>$10</span>
+                              <span>$5</span>
+                            </div>
+                            <a href="#" class="boton-cards btn agregar-carrito mt-4" data-id="7">Agregar al carrito</a>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="card" style="width: 18rem;">
+                          <img class="card-img-top" src="img/confites.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Confites</h5>
+                            <div class="d-flex justify-content-between precios">
+                              <span>$200</span>
+                              <span>$100</span>
+                            </div>
+                            <a href="#" class="boton-cards btn agregar-carrito mt-4" data-id="8">Agregar al carrito</a>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="card" style="width: 18rem;">
+                          <img class="card-img-top" src="img/pote.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Pote</h5>
+                            <div class="d-flex justify-content-between precios">
+                              <span>$200</span>
+                              <span>$100</span>
+                            </div>
+                            <a href="#" class="boton-cards btn agregar-carrito mt-4" data-id="9">Agregar al carrito</a>
+                          </div>
+                        </div>
+                  </div>
+              </div>         
+          </section>
+      </div>
+
+        <!--Ellos ya confían en nosotros-->
+        <section class="confianza contenedor">
+            <p class="container parrafo-confianza">Ellos ya confian en nosotros</p>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                          <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
+                          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active ">
+                             <div class="carousel-imagenes d-flex flex-column  align-items-center">
+                                 <img src="img/mujer.png" class="imagen-carrousel " alt="">
+                                 <p class="parrafos-carousel">¡Los productos son un lujo! </p>
+                             </div>
+                          </div>
+                          <div class="carousel-item ">
+                            <div class="carousel-imagenes d-flex flex-column  align-items-center">
+                                <img src="img/hombre.png" class="imagen-carrousel" alt="">
+                                <p class="parrafos-carousel">¡Estoy súper conforme con Helado Plus! </p>
+                            </div>
+                         </div>
+                         <div class="carousel-item ">
+                            <div class="carousel-imagenes d-flex flex-column align-items-center">
+                                <img src="img/hombre2.png" class="imagen-carrousel" alt="">
+                                <p class="parrafos-carousel">Los productos son de muy buena calidad</p>
+                            </div>
+                         </div>
+                          
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+        </section>
+
+        
+
+        <!--Visitá nuestro blog-->
+        <section class="blog container">
+            <p class="parrafo-visita">Visitá nuestro blog</p>
+            <div class="row pt-3">
+                <div class="col-md-3 columna-visita">
+                    <img src="img/helado-vegano.jpg" class=" imagen-recetas " alt="">
+                    <span>Yogurt helado</span>
+                    <a href="#">Con esta receta aprenderás a hacer yogurt helado</a>
+                </div>
+                <div class="col-md-3 columna-visita">
+                    <img src=" img/helado-oreo.jpg" class=" imagen-recetas " alt="">
+                    <span>Crema Óreo</span>
+                    <a href="#">Aprende a hacer crema oreo de manera facil y sencilla</a>
+                </div>
+                <div class="col-md-3 columna-visita">
+                    <img src="img/helado-frutilla.jpg" class="imagen-recetas " alt="">
+                    <span>Helado vegano</span>
+                    <a href="#">Aprende a hacer helado vegano de frutilla</a>
+                </div>
+                <div class="col-md-3 columna-visita">
+                    <img src="img/helado-vegano-menta.jpg" class=" imagen-recetas " alt="">
+                    <span>Helado de palta</span>
+                    <a href="#">Aprende a realizar helado de palta</a>
+                </div>
+            </div>
+        </section>
+
+        <!--Banner-->
+        <section class="mt-4">
+            <div class="row banner ">
+                <div class="container d-flex align-items-center justify-content-between">
+                    <div class="col-md-6 ">
+                        <span class="text-white"></span>
+                    </div>
+                    <div class="col-md-6  ">
+                        <button class="float-right btn-escribinos"> Escribinos</button>
+                    </div>
+                </div> 
+            </div>
+        </section>
+    </main>
+
+    <!--footer-->
+    <footer class="container-fluid">
+      
+        <div class="row container contenedor-footer align-items-center  ">
+            <div class="col-md-6 pt-3 newsletter">
+                <ul class="d-flex flex-column justify-content-around  " >
+                    <li class="pb-2 pt-4 p-newsletter"> Suscribite al newsletter</li>
+                    <li class="d-flex flex-column">
+                        <input type="text" placeholder="Nombre (sin apellido)">
+                        <input type="email" placeholder="Email" class="mt-2">
+                        <button class="mt-3 btn-suscripcion">Suscribirme</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 pt-3 redes">
+                <ul class="d-flex flex-column justify-content-around">
+                  <li>Seguinos</li>
+                  <li class="d-flex justify-content-around">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                  </li>
+
+                </ul>
+            </div>
+            
+        </div>
+      
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+  integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+  integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<script src="js/carrito.js"></script>
+<script src="js/modal.js"></script>
+
+    
+</body>
+</html>

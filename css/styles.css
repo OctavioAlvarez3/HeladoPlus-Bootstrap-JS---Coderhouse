@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap');
+
+
+
+
+/*Menu*/
+.fa-shopping-cart{
+    font-size: 1.8rem;
+    
+}
+
+.logo-heladeria{
+    width: 14rem;
+}
+
+
+
+
+.barra{
+    background-image: url(../img/helado-fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+
+
+}
+
+.menu{
+    padding-top: 1rem;
+}
+
+
+
+.navegacion-principal a{
+    color: #ffffff;
+}
+
+@media (max-width:600px){
+    .div-cotizacion{
+        text-align: center;
+    }
+}
+
+.div-cotizacion{
+    
+    margin-top: 14rem;
+
+}
+
+.div-cotizacion span{
+    font-size: 2rem;
+    color: #ffffff;
+    
+}
+
+
+
+.b-cotizacion{
+    background-color: #f25e86;
+    font-size: 1.6rem;
+    padding: .5rem;
+    width: 12rem;
+    margin-top: 2rem;
+    border-radius: 5px ;
+    border: 0px;
+    color: #ffffff;
+}
+
+.b-cotizacion:hover{
+    background-color: #f37496;
+}
+
+
+/*Tabla de carrito*/
+
+table th{
+    font-weight: 500;
+    color: #ca435a;
+}
+
+ul {
+    list-style: none;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu #carrito{
+    display: none;
+}
+.submenu:hover #carrito{
+    display: block;
+    position: absolute;
+    right:0;
+    top:100%;
+    z-index: 1;
+    border-radius: 3px;
+    background-color: rgba(211, 240, 243, 0.9);
+    padding: 20px;
+    min-height: 400px;
+    min-width: 450px;
+}
+
+.fa-trash {
+    margin-top: 1rem;
+    color: #0396a6;
+    padding: 5px 10px;
+    text-decoration: none;
+    
+    font-weight: bold;
+}
+
+.vaciar{
+    
+    text-decoration: none;
+    padding: .7rem;
+    color: #ffffff;
+    background-color:#f37496 ;
+    border-radius: 5px;
+    border: 0px
+}
+.vaciar:hover{
+    text-decoration: none;
+}
+
+.confirmar{
+    margin-top: .5rem;
+    margin-left: 5rem;
+    padding: .7rem;
+    color: #ffffff;
+    background-color:#4ad9ca ;
+    border-radius: 5px;
+    border: 0px
+}
+
+.confirmar:hover{
+    text-decoration: none;
+}
+
+/*Modal*/
+
+.modal-contenedor {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-carrito {
+    position: relative;
+    background-color: white;
+    min-height: 600px;
+    min-width: 900px;
+    padding: 20px;
+    margin-top: -100%;
+    transition: all .5s;
+    border-radius: 5px;
+}
+
+.modal-active .modal-carrito {
+    margin-top: 0;
+}
+
+.modal-carrito h3 {
+    color: royalblue;
+    padding-bottom: 5px;
+}
+.modal-carrito #carritoCerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: rgb(20, 35, 78);
+    border: none;
+    background-color: white;
+}
+.modal-carrito #carritoCerrar:hover {
+    cursor: pointer;
+}
+.modal-carrito #carritoCerrar:focus {
+    outline: none;
+}
+
+.modal-carrito h3:first-of-type{
+    color: #f37496;
+    margin-top: 1rem;
+}
+
+label.error {
+    color: red;
+    font-size: 1rem;
+    display: block;
+    margin-top: 5px;
+}
+
+
+
+.form{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.form label{
+    padding: 1rem;
+}
+
+.form input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+}
+
+.btn-pedido{
+    
+    margin: 0 auto;
+    width: 50%;
+    background-color: #ca435a;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+}
+
+
+/*Agrega insumos al carrito*/
+
+main p:first-of-type{
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+/*detalles sobre los cards*/
+@media (max-width:600px){
+    .primera-fila{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left:4rem;
+        padding-top: 1rem;
+        
+    }
+
+    .primera-fila .col-md-4{
+        padding-top: 2rem;
+        
+    }
+}
+
+@media (max-width:600px){
+    .segunda-fila{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left:4rem;
+        padding-top: 1rem;
+        
+    }
+
+    .segunda-fila .col-md-4{
+        padding-top: 2rem;
+        
+    }
+}
+
+@media (max-width:600px){
+    .tercera-fila{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left:4rem;
+        padding-top: 1rem;
+        
+    }
+
+    .tercera-fila .col-md-4{
+        padding-top: 2rem;
+        
+    }
+}
+
+.card-img-top{
+    width: 286px;
+    height: 220px;
+}
+
+.boton-cards{
+    color: #ffffff;
+    background-color: #f25e86;
+    width: 100%;
+}
+
+.boton-cards:hover{
+    background-color: #f37496;
+    color: #ffffff;
+}
+.fondo-cards{
+    padding-top: 0;
+    background: url(../img/trama.jpg);
+    background-position: center;
+    padding-bottom: 5rem;
+    
+}
+
+.p-agregar{
+    color: #5a274d;
+}
+
+h5{
+    color: #5a274d;
+}
+
+.card-insumos span:first-of-type{
+
+    text-decoration: line-through;
+}
+
+
+
+/*Ellos ya confian en nosotros*/
+
+.confianza{
+    background-color: #4ad9ca;
+    height: 50vh;
+}
+
+
+.parrafo-confianza{
+    padding-top: 4rem;
+    font-size: 1.7rem;
+    color: #ffffff;
+}
+
+.carousel-imagenes .parrafos-carousel{
+    font-size: 1.4rem;
+}
+
+.carousel-imagenes{
+   
+    height: 20rem;
+   
+}
+
+.carousel-imagenes p{
+    color: #ffffff;
+    padding-top: 15rem;
+    text-align: center;
+}
+
+.imagen-carrousel{
+    text-align: center;
+    height: 200px;
+    width: 200px;
+}
+
+
+/*Visitá nuestro blog*/
+.blog{
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+@media (max-width:600px){
+    .columna-visita{
+        padding-left: 3rem;
+        padding-top: 1rem;
+    }
+}
+
+.parrafo-visita{
+    padding-top: 4rem;
+    font-size: 1.7rem;
+    color: #5a274d;
+}
+
+.blog span{
+    display: block;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 10rem;
+    color: #ffffff;
+    background-color: #f0637b;
+}
+
+.blog a{
+    color: #5a274d;
+}
+
+.imagen-recetas{
+    width: 255px;
+    height: 200px;
+}
+
+
+/*Banner*/
+.banner{
+    background-color: #4ad9ca;
+    height: 3rem;
+}
+
+.btn-escribinos{
+    background-color: #f37496;
+    color: #ffffff;
+    border:0px;
+    border-radius: 5px;
+    padding: .3rem;
+    width: 8rem;
+}
+
+/*Footer*/
+footer{
+    width: 100%;
+    height: 45vh;
+    background-color: #f8c9d1;
+    
+}
+
+footer ul li{
+    list-style: none;
+}
+
+footer ul li i{
+    font-size: 1.4rem;
+}
+
+footer ul li a{
+    font-size: 1rem;
+    color: #ffffff;
+    
+}
+
+footer ul li:first-of-type{
+
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.fab{
+    color:#f0637b ;
+}
+
+.btn-suscripcion{
+    background-color: #f0637b ;
+    color: #ffffff;
+    border: 0px;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+    width: 80%;
+    border-radius: 5px;
+
+}
+
+.contenedor-footer{
+    padding-top: 2rem;
+    margin: 0 auto;
+}
+
+.newsletter ul li:first-of-type{
+    color: #5a274d;
+}
+
+.newsletter ul{
+    width: 50%;
+}
+
+.newsletter input{
+    border: 0px;
+}
+
+
+@media (max-width:600px){
+    
+    .redes{
+        margin-top: 4rem;
+    }
+}
+
+.redes ul li:first-of-type{
+    color: #5a274d;
+    margin-top: -5.5rem;
+    text-align: center;
+}
